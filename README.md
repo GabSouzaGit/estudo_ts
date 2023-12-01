@@ -42,7 +42,7 @@ Caso tenha interesse no código, você pode seguir os passos abaixo para instala
 
 ```typescript
 
-import memoize from "./functions/memeoize";
+import memoize from "./functions/memoize";
 
 const memoized = memoize((x, y) => {
     return x + y;
