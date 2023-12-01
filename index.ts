@@ -1,1 +1,1 @@
-console.log("Hello world");
+import memoize from "./functions/memeoize";
