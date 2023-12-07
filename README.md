@@ -26,7 +26,7 @@ Caso tenha interesse no código, você pode seguir os passos abaixo para instala
 #### ⚡ Execute o projeto:
 
 ```bash
-   npm start
+  npm start
 ```
 
 
