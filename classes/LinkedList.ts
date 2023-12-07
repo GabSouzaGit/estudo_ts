@@ -4,6 +4,10 @@ type LinkedListStructure<Data> = {
 
 class LinkedList<Data>{
     private linkedList : LinkedListStructure<Data>;
+    /**
+     * @description Realiza a instancia de uma lista encadeada símples.
+     * @param {Data} first Primeiro valor para iniciar a lista encadeada (não obrigatório).
+     */
     constructor(first ? : Data){
         if(first){
             this.linkedList = {
@@ -15,7 +19,11 @@ class LinkedList<Data>{
         this.linkedList = {};
     }
 
-    public push(value : Data) : void{
+    /**
+     * @description Adiciona novo valor no final da lista.
+     * @param {Data} value Valor a ser adicionado.
+     */
+    public push(value : Data){
         if(!this.linkedList.value){
             this.linkedList.value = value;
             return;
@@ -34,6 +42,10 @@ class LinkedList<Data>{
         reference.next = { value: value }
     }
 
+    /**
+     * @description Adiciona novo valor no inicio da lista.
+     * @param {Data} value Valor a ser adicionado.
+     */
     public unshift(value : Data) : void {
         if(!this.linkedList.value){
             this.linkedList.value = value;
@@ -45,11 +57,14 @@ class LinkedList<Data>{
             next: this.linkedList
         }
     }
-
+    /**
+     * @description Remove o valor da lista.
+     * @param {Data} value Valor a ser removido.
+     */
     public delete(value : Data){
         let currentNode : any = this.linkedList;
         if(!currentNode.next) return;
-        
+
         let previousPath : any;
         let nextPath : any;
         while(true){            
@@ -72,16 +87,27 @@ class LinkedList<Data>{
         previousPath.next = nextPath;
     }
 
+    /**
+     * @description Remove todos os valores da lista.
+     */
     public flush(){
         this.linkedList = {};
     }
 
+    /**
+     * @description Reseta toda a lista, reiniciando com um novo valor.
+     * @param {Data} value Valor usado na reinicialização.
+     */
     public reset(value : Data){
         this.linkedList = {
             value: value
         }
     }
 
+    /**
+     * @description Retorna o ultimo valor da lista.
+     * @returns {Data} Ultimo valor correspondente.
+     */
     public getLast() : Data {
         let currentNode = this.linkedList;
         while(true){
@@ -96,11 +122,19 @@ class LinkedList<Data>{
         return currentNode.value;
     }
 
+    /**
+     * @description Retorna o primeiro valor da lista.
+     * @returns {Data} Primeiro valor correspondente.
+     */
     public getFirst() : Data {
         const currentNode : any = this.linkedList.value;
         return currentNode;
     }
 
+    /**
+     * @description Gera uma representação da lista.
+     * @returns {string} Uma representação textual e formatada da estrutura de dados.
+     */
     public getDataStructure() : string {
         return JSON.stringify(this.linkedList, null, 2);
     }
