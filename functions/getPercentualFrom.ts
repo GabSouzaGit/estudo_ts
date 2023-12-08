@@ -18,10 +18,7 @@ function getPercentualFrom(...n : number[]) : Percentuals {
        return x * 100 / total
     })
     
-    return {
-        total: total,
-        percentuals: percentuals
-    } 
+    return { total, percentuals } 
 }
 
 export default getPercentualFrom;
