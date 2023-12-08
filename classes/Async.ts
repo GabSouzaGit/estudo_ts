@@ -14,15 +14,13 @@ class Async extends Promise<PromiseConstructor>{
      * @param {object} options Configurações para o fetching.
      * @returns {any} Resultado do serviço consumido.
      */
-    public static async fetch(url : string, callback : any, options = {}){
+    public static async fetch(url : string, options = {}){
         if(url in this.cachedRequests){
             return this.cachedRequests[url];
         }
 
         const request = await fetch(url, options);
         const response = await request.json();
-
-        callback()
         this.cachedRequests[url] = response;
         return response;
     }
