@@ -14,7 +14,7 @@ class Async extends Promise<PromiseConstructor>{
      * @param {object} options Configurações para o fetching.
      * @returns {any} Resultado do serviço consumido.
      */
-    public static async fetch(url : string, options = {}){
+    public static async fetch(url : string, options = {}) : Promise<object>{
         if(url in this.cachedRequests){
             return this.cachedRequests[url];
         }
