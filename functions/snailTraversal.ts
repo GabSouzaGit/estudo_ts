@@ -1,3 +1,5 @@
+type Matrix<T> = T[][];
+
 function snailTraversal<A>(matrix : Matrix<A>){
     let [line, add] = [0, 1];
     for(let i = 0; i < matrix[0].length; i++){
