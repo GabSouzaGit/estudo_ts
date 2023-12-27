@@ -1,11 +1,9 @@
-type Fn = (...params: any) => any
-
 /**
- * @param fn {Fn} Uma função que recebe um numero indefinido de parametros e retorna qualquer dado.
+ * @param {Function} fn Uma função que recebe um numero indefinido de parametros e retorna qualquer dado.
  * @returns Uma versão memoizada da função informada.
  */
 
-function memoize(fn: Fn): Fn {
+function memoize(fn: Function): Function {
     const cache : {
         [key : string] : any
     } = {}
