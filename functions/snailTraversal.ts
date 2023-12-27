@@ -1,5 +1,10 @@
 type Matrix<T> = T[][];
 
+/**
+ * @description Itera a matrix pelas colunas dela (esquerda para a direita - cima para baixo).
+ * @param {Matrix} matrix Uma matrix bidimensional de qualquer tipo.
+ */
+
 function snailTraversal<A>(matrix : Matrix<A>){
     let [line, add] = [0, 1];
     for(let i = 0; i < matrix[0].length; i++){
