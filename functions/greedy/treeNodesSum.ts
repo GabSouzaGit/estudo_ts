@@ -4,43 +4,34 @@ type Tree = {
     right? : Tree
 }
 
-function treeNodesSum(tree : Tree) : Record<string, number | number[]>{
-    const treePath : number[] = [tree.node];
-    let curr = tree;
-    let sum = curr.node;
+function treeNodesSum(tree : Tree) : number {
+    let sum = tree.node; 
 
-    while(true){
-        if(curr.right && curr.left){
-            const [bigger, side] : [number, string] = curr.right.node > curr.left.node ? [curr.right.node, 'right'] : [curr.left.node, 'left'];
-            sum += bigger;
-            treePath.push(bigger)
-            curr = curr[side];
-            continue;
+    const recursive = (subTree : Tree) => {
+        if(subTree.left && subTree.right){
+            if(subTree.left.node > subTree.right.node){
+                sum += subTree.left.node;
+                recursive(subTree.left)
+                return;
+            }else{
+                sum += subTree.right.node;
+                recursive(subTree.right);
+                return;
+            }
         }
 
-        if(!curr.right){
-            const left = (curr.left as Tree)
-            sum += left.node;
-            treePath.push(left.node)
-            curr = left;
-            continue;
+        if(!subTree.left && !subTree.right){
+            return;
         }
 
-        if(!curr.left){
-            const right = (curr.right as Tree)
-            sum += right.node;
-            treePath.push(right.node)
-            curr = right;
-            continue
-        }
-
-        break;
+        const next = (subTree.left || subTree.right) as Tree;
+        sum += next.node;
+        recursive(next);
     }
 
-    return {
-        sum,
-        treePath
-    }
+    recursive(tree)
+
+    return sum;
 }
 
 export default treeNodesSum;
