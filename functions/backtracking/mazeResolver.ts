@@ -11,6 +11,14 @@ const directions : Local[] = [
     { x: -1, y: 0 }
 ]
 
+/**
+ * 
+ * @param {Maze} maze Estrutura de dados bidimensional que represente um labirinto (0 = parede; 1 = caminho).
+ * @param {Local} start Objeto com propriedades x (horizontal) e y (vertical) que representem o inicio do caminho feito pelo algoritmo. 
+ * @param {Local} final Objeto com propriedades x (horizontal) e y (vertical) que representem o fim do caminho feito pelo algoritmo. 
+ * @returns {Maze} Labirinto com o caminho encontrado pelo algoritmo.
+ */
+
 function mazeResolver(maze : Maze, start : Local, final : Local) : Maze{
     function resolver(position : Local, exit : Local){
         const path : Local[] = [];

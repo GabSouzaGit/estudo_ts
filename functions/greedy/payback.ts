@@ -1,5 +1,12 @@
 const coins : number[] = [50, 25, 10, 5, 1];
 
+/**
+ * 
+ * @param {number} value Valor a ser pago.
+ * @param {number} payment Pagamento pelo valor.
+ * @returns {number[]} Troco do valor pago em moedas. 
+ */
+
 function payback(value : number, payment : number){
     let rest = value - payment;
     let paybackCoins : number[] = [];

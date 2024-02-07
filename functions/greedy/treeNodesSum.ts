@@ -4,6 +4,11 @@ type Tree = {
     right? : Tree
 }
 
+/**
+ * @param {Tree} tree Estrutura de dados representada como uma árvore binária numérica.
+ * @returns {number} Resultado da soma dos maiores nós traçados durante o percurso pela árvore.
+ */
+
 function treeNodesSum(tree : Tree) : number {
     let sum = tree.node; 
 
