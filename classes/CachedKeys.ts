@@ -21,7 +21,7 @@ class CachedKeys {
     set(key : string, value : string, ms : number) : boolean{
         let exists : boolean = false
         if(key in this.keys){
-            exists = true;
+            return true;
         }
 
         this.keys[key] = value;
@@ -31,7 +31,7 @@ class CachedKeys {
             console.log(`A chave ${key} acabou e expirar em ${ms} milissegundos.`)
         }, ms);
 
-        return exists
+        return false
     }
 
     /**
