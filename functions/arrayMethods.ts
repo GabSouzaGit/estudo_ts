@@ -56,17 +56,3 @@ export function filter(array : any[], callback : FilterFunction){
 
     return filtered;
 }
-
-/**
- * 
- * @param {number[]} array Um array numérico de n posições.
- * @returns Um novo array com apenas números pares.
- */
-export function getOnlyPairs(array : number[]){
-    const pairArray : number[] = [];
-    for(let x = 0; x < array.length; x++){
-        if(array[x] % 2 === 0) pairArray.push(array[x]);
-    }
-
-    return pairArray;
-}
