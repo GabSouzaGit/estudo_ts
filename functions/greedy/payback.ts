@@ -1,4 +1,12 @@
-const coins : number[] = [50, 25, 10, 5, 1];
+const coins : Record<string, number> = {
+    '50': 0,
+    '25': 0,
+    '10': 0,
+    '5': 0,
+    '1': 0
+};
+
+const coinsValues : number[] = [50, 25, 10, 5, 1];
 
 /**
  * 
@@ -11,18 +19,29 @@ function payback(value : number, payment : number){
     let rest = value - payment;
     let paybackCoins : number[] = [];
     while(rest > 0){
-        for(let coin = 0; coin < coins.length; coin++){
-            if(rest - coins[coin] < 0){
+        for(let coin = 0; coin < coinsValues.length; coin++){
+            if(rest - coinsValues[coin] < 0){
                 continue;
             }
 
-            rest -= coins[coin];
-            paybackCoins.push(coins[coin])
+            coins[coinsValues[coin]] += 1;
+            rest -= coinsValues[coin];
+            paybackCoins.push(coinsValues[coin])
             break;
         }
     }
 
-    return paybackCoins;
+    const coinsKeys = Object.keys(coins);
+
+    const filteredCoins = coinsKeys.filter(coin => {
+        return coins[coin] != 0;
+    })
+
+    const filteredResult : any[] = filteredCoins.map(x => {
+        return [x, coins[x]]
+    })
+
+    return filteredResult;
 }
 
 export default payback;

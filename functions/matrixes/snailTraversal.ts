@@ -1,4 +1,4 @@
-type Matrix<T> = T[][];
+import type { Matrix } from '../../types/Matrix'
 
 /**
  * @description Itera a matrix pelas colunas dela (esquerda para a direita - cima para baixo).
