@@ -6,7 +6,7 @@ import type { Matrix } from "../../types/Matrix";
  * @param second Segunda matriz.
  * @returns Uma nova matriz com todos os elementos somados.
  */
-function matrixSum(first : Matrix<number>, second : Matrix<number>){
+export default function matrixSum(first : Matrix<number>, second : Matrix<number>){
     const lengthLines = first.length === second.length;
     const lengthCols = first[0].length === second[0].length;
     const matrix : Matrix<number> = [];
