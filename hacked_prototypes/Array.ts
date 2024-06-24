@@ -19,6 +19,10 @@ Array.prototype.getOnlyPairs = function(){
     return pairArray;
 }
 
+/**
+ * @description Versão experimental de um loop forEach que pode ser parado.
+ * @param {(x : any, die : Function, index? : number, array? : any[]) => void} callback Função que será executada durante a iteração.
+ */
 Array.prototype.stoppableForEach = function(callback : (x : any, die : Function, index? : number, array? : any[]) => void){
     const die = () => {
         throw new Error('DIE_FOREACH_EXECUTION');
@@ -34,6 +38,12 @@ Array.prototype.stoppableForEach = function(callback : (x : any, die : Function,
     }
 }
 
+/**
+ * @description Preenche os índices de uma matriz por meio de currying.
+ * @param first Inicio do preenchimento.
+ * @param last Fim do preenchimento.
+ * @param value Valor para o preenchimento.
+ */
 Array.prototype.fillWithCurrying = function(first : number){
     return (last : number) => {
         return (value : any) => {

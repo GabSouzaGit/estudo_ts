@@ -1,3 +1,8 @@
+/**
+ * 
+ * @param array Matriz de qualquer tipo ou tamanho.
+ * @returns Versão simetricamente particionada da matriz.
+ */
 export default function chunkSymmetricallyArray(array : any[]){
     const chunkedArray : any[][] = [];
     let chunkLength = 0;

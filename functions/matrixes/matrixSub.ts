@@ -1,5 +1,11 @@
 import type { Matrix } from "../../types/Matrix";
 
+/**
+ * 
+ * @param first Matriz numérica com o mesmo número de linhas e colunas da segunda.
+ * @param second Matriz numérica com o mesmo número de linhas e colunas da primeira.
+ * @returns Matriz que corresponda a subtração dos termos das outras duas.
+ */
 export default function matrixSub(first : Matrix<number>, second : Matrix<number>){
     const lengthLines = first.length === second.length;
     const lengthCols = first[0].length === second[0].length;

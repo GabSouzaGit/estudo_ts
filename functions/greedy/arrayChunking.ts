@@ -1,3 +1,8 @@
+/**
+ * @description Particiona, gulosamente e simetricamente, uma matriz de N posições em blocos.
+ * @param array Matriz de qualquer tipo ou tamanho.
+ * @returns Versão particionada da matriz.
+ */
 export function greedyChunkArray(array : any[]){
     const chunkedArray : any[][] = [];
     let chunkLength = 0;
@@ -18,6 +23,11 @@ export function greedyChunkArray(array : any[]){
     return chunkedArray;
 }
 
+/**
+ * @description Particiona, simetricamente e o mais gulosamente possível, uma matriz de N posições.
+ * @param array Matriz de qualquer tipo ou tamanho.
+ * @returns Versão particionada da matriz.
+ */
 export function reallyGreedyChunkArray(array : any[]){
     const chunkedArray : any[][] = [];
     let chunkLength = 0;

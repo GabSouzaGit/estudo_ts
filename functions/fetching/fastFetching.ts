@@ -1,4 +1,9 @@
-async function fastFetching(...urls : string[]){
+/**
+ * 
+ * @param urls Endpoints que serão consumidos pela função.
+ * @returns O resultado do endpoint que respondeu mais rápido à requisição.
+ */
+export default async function fastFetching(...urls : string[]){
     const promises : (() => Promise<any>)[] = []
 
     const generatePromise = (url : string) => {
@@ -18,10 +23,3 @@ async function fastFetching(...urls : string[]){
 
     return await Promise.race(promises);
 }
-
-console.log(
-    fastFetching(
-        'https://viacep.com.br/ws/01001000/json/', 
-        ''
-    )
-);

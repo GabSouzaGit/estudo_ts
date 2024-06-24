@@ -1,3 +1,9 @@
+/**
+ * @description Particiona de forma irregular qualquer matriz de qualquer tipo.
+ * @param array Matriz de qualquer tipo ou tamanho.
+ * @param chunkLength Tamanho dos blocos da matriz.
+ * @returns Versão particionada da matriz.
+ */
 export default function irregularArrayChunk(array : any[], chunkLength : number){
     const chunkedArray : any[][] = [];
     let currentChunk : any[] = [];

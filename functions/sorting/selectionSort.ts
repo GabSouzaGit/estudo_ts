@@ -1,7 +1,7 @@
 /**
- * @description Ordena um array numérico, utilizando um algoritimo de ordenação por seleção.
- * @param {number[]} array Um array numérico de n posições.
- * @returns Uma versão ordenada do array.
+ * @description Ordena uma matriz numérica, utilizando um algoritimo de ordenação por seleção.
+ * @param {number[]} array Uma  matriz numérica de n posições.
+ * @returns Uma versão ordenada da matriz.
  */
 
 function selectionSort(array : number[]){
