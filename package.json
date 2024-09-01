@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "test": "jest",
-    "start": "npx ts-node index.ts"
+    "start": "tsx watch index.ts"
   },
   "keywords": [
     "typescript",
