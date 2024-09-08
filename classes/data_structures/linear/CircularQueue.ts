@@ -81,7 +81,7 @@ export default class CircularQueue<T> {
     }
     
     /**
-     * @description Retorna a iteração da fila para o primeiro índice.
+     * @description Reseta a iteração da fila para o primeiro índice.
      */
     public resetIterations(){
         this.position = 0;
