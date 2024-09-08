@@ -1,7 +1,7 @@
 export default class CircularQueue<T> {
     private struct : T[] = [];
     private position : number = 0;
-    
+
     public size : number;
 
     /**
@@ -51,12 +51,12 @@ export default class CircularQueue<T> {
      * @returns Estrutura da fila formatada como objeto.
      */
     public getStructure(){
-        const strcuture = {};
+        const structure = {};
         for(let i = 0; i < this.struct.length; i++){
-            strcuture[i] = this.get(i);
+            structure[i] = this.get(i);
         }
 
-        return strcuture;
+        return structure;
     }
 
     /**
@@ -64,13 +64,20 @@ export default class CircularQueue<T> {
      * @param callback Função executada durante cada iteração.
      * @returns Resultado da função.
      */
-    public iterator(callback : Function){
-        if(this.position >= this.size) this.position = 0;
-        
-        const result = callback(this.get(this.position));
-        this.position++;
+    public createIterator(
+        callback : (value : T) => any, 
+        start : number = 0
+    ){
+        this.position = start;
 
-        return result;
+        return () => {
+            if(this.position >= this.size) this.position = 0;
+            
+            const result = callback(this.get(this.position));
+            this.position++;
+    
+            return result;
+        }
     }
     
     /**
