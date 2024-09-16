@@ -1,14 +1,14 @@
-type LinkedListStructure<Data> = {
-    [value : string] : Data | any
+type LinkedListStructure<T> = {
+    [value : string] : T | any
 }
 
-class LinkedList<Data>{
-    private linkedList : LinkedListStructure<Data>;
+class LinkedList<T>{
+    private linkedList : LinkedListStructure<T>;
     /**
      * @description Realiza a instancia de uma lista encadeada símples.
-     * @param {Data} first Primeiro valor para iniciar a lista encadeada (não obrigatório).
+     * @param {T} first Primeiro valor para iniciar a lista encadeada (não obrigatório).
      */
-    constructor(first ? : Data){
+    constructor(first ? : T){
         if(first){
             this.linkedList = {
                 value: first
@@ -21,9 +21,9 @@ class LinkedList<Data>{
 
     /**
      * @description Adiciona novo valor no final da lista.
-     * @param {Data} value Valor a ser adicionado.
+     * @param {T} value Valor a ser adicionado.
      */
-    public push(value : Data){
+    public push(value : T){
         if(!this.linkedList.value){
             this.linkedList.value = value;
             return;
@@ -44,9 +44,9 @@ class LinkedList<Data>{
 
     /**
      * @description Adiciona novo valor no inicio da lista.
-     * @param {Data} value Valor a ser adicionado.
+     * @param {T} value Valor a ser adicionado.
      */
-    public unshift(value : Data) : void {
+    public unshift(value : T) : void {
         if(!this.linkedList.value){
             this.linkedList.value = value;
             return;
@@ -59,9 +59,9 @@ class LinkedList<Data>{
     }
     /**
      * @description Remove o valor da lista.
-     * @param {Data} value Valor a ser removido.
+     * @param {T} value Valor a ser removido.
      */
-    public delete(value : Data){
+    public delete(value : T){
         let currentNode : any = this.linkedList;
         if(!currentNode.next) return;
 
@@ -96,9 +96,9 @@ class LinkedList<Data>{
 
     /**
      * @description Reseta toda a lista, reiniciando com um novo valor.
-     * @param {Data} value Valor usado na reinicialização.
+     * @param {T} value Valor usado na reinicialização.
      */
-    public reset(value : Data){
+    public reset(value : T){
         this.linkedList = {
             value: value
         }
@@ -106,9 +106,9 @@ class LinkedList<Data>{
 
     /**
      * @description Retorna o ultimo valor da lista.
-     * @returns {Data} Ultimo valor correspondente.
+     * @returns {T} Ultimo valor correspondente.
      */
-    public getLast() : Data {
+    public getLast() : T {
         let currentNode = this.linkedList;
         while(true){
             if(currentNode.next){
@@ -124,9 +124,9 @@ class LinkedList<Data>{
 
     /**
      * @description Retorna o primeiro valor da lista.
-     * @returns {Data} Primeiro valor correspondente.
+     * @returns {T} Primeiro valor correspondente.
      */
-    public getFirst() : Data {
+    public getFirst() : T {
         const currentNode : any = this.linkedList.value;
         return currentNode;
     }
@@ -135,7 +135,7 @@ class LinkedList<Data>{
      * @description Gera uma representação da lista.
      * @returns {string} Uma representação textual e formatada da estrutura de dados.
      */
-    public getDataStructure() : string {
+    public getTStructure() : string {
         return JSON.stringify(this.linkedList, null, 2);
     }
 }
