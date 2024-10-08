@@ -1,18 +1,14 @@
-type Tree = {
-    node : number,
-    left? : Tree,
-    right? : Tree
-}
+import type { BinaryTree } from "../../types/BinaryTree";
 
 /**
- * @param {Tree} tree Estrutura de dados representada como uma árvore binária numérica.
+ * @param {BinaryTree} tree Estrutura de dados representada como uma árvore binária numérica.
  * @returns {number} Resultado da soma dos maiores nós traçados durante o percurso pela árvore.
  */
 
-function treeNodesSum(tree : Tree) : number {
+function treeNodesSum(tree : BinaryTree) : number {
     let sum = tree.node; 
 
-    const recursive = (subTree : Tree) => {
+    const recursive = (subTree : BinaryTree) => {
         if(subTree.left && subTree.right){
             if(subTree.left.node > subTree.right.node){
                 sum += subTree.left.node;
@@ -29,7 +25,7 @@ function treeNodesSum(tree : Tree) : number {
             return;
         }
 
-        const next = (subTree.left || subTree.right) as Tree;
+        const next = (subTree.left || subTree.right) as BinaryTree;
         sum += next.node;
         recursive(next);
     }

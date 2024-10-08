@@ -1,8 +1,4 @@
-type BinaryTreeType = {
-    value : number,
-    left : BinaryTreeType | null,
-    right : BinaryTreeType | null
-}
+import * as TreeTypes from "../../../types/BinaryTree";
 
 function TreeNode(value : number){
     this.value = value
@@ -11,7 +7,7 @@ function TreeNode(value : number){
 }
 
 export default class BinaryTree{
-    private head : BinaryTreeType;
+    private head : TreeTypes.BinaryTree;
     public nodeQtd : number = 0;
     
     constructor(value : number){
@@ -23,7 +19,7 @@ export default class BinaryTree{
         let currentRef = this.head;
 
         while(true){
-            if(currentRef.value >= value){
+            if(currentRef.node >= value){
                 if(currentRef.left === null){
                     currentRef.left = new TreeNode(value);
                     return;
