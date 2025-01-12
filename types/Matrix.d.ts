@@ -1,1 +1,5 @@
-export type Matrix<T> = T[][];
+declare global {
+    type Matrix<T> = T[][];
+}
+
+export {}

@@ -1,0 +1,8 @@
+{
+    "compilerOptions": {
+      // outras opções
+      "typeRoots": ["./node_modules/@types", "./types"],
+      "lib": ["ES2015", "dom"]
+    },
+
+  }

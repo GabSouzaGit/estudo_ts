@@ -1,4 +1,8 @@
-import * as TreeTypes from "../../../types/BinaryTree";
+type BinaryTreeType = {
+    node : number,
+    left : BinaryTreeType | null,
+    right : BinaryTreeType | null
+}
 
 function TreeNode(value : number){
     this.value = value
@@ -7,7 +11,7 @@ function TreeNode(value : number){
 }
 
 export default class BinaryTree{
-    private head : TreeTypes.BinaryTree;
+    private head : BinaryTreeType;
     public nodeQtd : number = 0;
     
     constructor(value : number){

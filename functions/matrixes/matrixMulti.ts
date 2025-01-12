@@ -1,5 +1,3 @@
-import type { Matrix } from "../../types/Matrix";
-
 /**
  * 
  * @param first Matriz numérica com número de linhas igual ao de colunas da segunda.

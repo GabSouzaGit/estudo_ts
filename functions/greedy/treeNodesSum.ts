@@ -1,4 +1,8 @@
-import type { BinaryTree } from "../../types/BinaryTree";
+type BinaryTree = {
+    node : number,
+    left : BinaryTree | null,
+    right : BinaryTree | null
+}
 
 /**
  * @param {BinaryTree} tree Estrutura de dados representada como uma árvore binária numérica.
