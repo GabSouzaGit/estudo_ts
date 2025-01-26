@@ -4,16 +4,21 @@ type Percentuals = {
 }
 
 
-class AdvancedMath {
+export default class AdvancedMath {
     /**
      * 
      * @param {number} n Valor à ser calculado.
      * @returns O fatorial de um valor numérico.
      */
 
-    static factorial(n : number) : number{
-        if(n <= 1) return n;
-        return n * this.factorial(n - 1);
+    static factorial(n : number) : bigint{
+        let factorialNumber = BigInt(1);
+
+        for(let x = BigInt(n); x > 0; x--){
+            factorialNumber *= x;
+        }
+
+        return factorialNumber;
     }
 
     /**
@@ -128,5 +133,36 @@ class AdvancedMath {
         if(percentual > 1 || percentual < 0) throw new Error('O percentual precisa ser um numero entre 1 e 0');
         const chance = percentual * total;
         return random(total) <= chance;
+    }
+
+    /**
+     * 
+     * @param callback Função executada ao fim da contagem.
+     * @param time Tempo em segundos definido para a contagem do cronômetro.
+     * @param timeTick Velocidade em que o tempo avançará.
+     * @returns Resultado da função passada por callback.
+     */
+    static countdown(callback : Function, time : number, timeTick : number = 1){
+        const minutes = Number(Math.trunc(time / 60))
+        const seconds = Math.abs((minutes * 60) - time);
+        const currentCountdown = [minutes, seconds]
+
+        return new Promise(resolve => {
+            const interval = setInterval(() => {
+                console.log(currentCountdown);
+                
+                if(currentCountdown[0] <= 0 && currentCountdown[1] <= 0){
+                    clearInterval(interval);
+                    resolve(callback());
+                }
+                if(currentCountdown[1] <= 0){
+                    currentCountdown[0]--;
+                    currentCountdown[1] = 59;
+                }
+                else{
+                    currentCountdown[1]--;
+                }
+            }, 1000 / timeTick)
+        });
     }
 }
