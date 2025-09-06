@@ -1,4 +1,4 @@
-import possibility from "../math/possibility"
+import { possibility } from "../../classes/AdvancedMath";
 
 const resolveStruct = [
     {
