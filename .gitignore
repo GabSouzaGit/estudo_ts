@@ -1,5 +1,6 @@
 # Pasta de dependencias
 
+.vscode
 node_modules
 private
 **.sql

@@ -5,6 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "start": "tsx watch index.ts",
+    "test": "tsx index.ts",
     "load_private": "tsx private/test.ts"
   },
   "keywords": [
