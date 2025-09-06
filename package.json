@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "start": "tsx watch index.ts"
+    "start": "tsx watch index.ts",
+    "load_private": "tsx private/test.ts"
   },
   "keywords": [
     "typescript",
@@ -14,9 +15,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/voca": "^1.4.6",
     "tsx": "^4.19.0",
-    "typescript": "^5.3.2",
-    "voca": "^1.4.1"
+    "typescript": "^5.3.2"
   }
 }
