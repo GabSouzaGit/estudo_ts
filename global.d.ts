@@ -1,0 +1,1 @@
+// Declaração global de tipos
