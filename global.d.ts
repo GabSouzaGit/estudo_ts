@@ -1,12 +1,7 @@
 /** Declaração global de tipos **/
 
 // Tipos fixos 
-type Color = 'red' |
-'green' |
-'yellow' |
-'blue' |
-'purple' |
-'cyan';
+type Color = 'red' |'green' |'yellow' |'blue' |'purple' |'cyan';
 
 type BitOctect = `${1|0}${1|0}${1|0}${1|0}${1|0}${1|0}${1|0}${1|0}`
 
