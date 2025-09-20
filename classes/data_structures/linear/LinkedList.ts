@@ -1,7 +1,3 @@
-type LinkedListStructure<T> = {
-    [value : string] : T | any
-}
-
 class LinkedList<T>{
     private linkedList : LinkedListStructure<T>;
     /**

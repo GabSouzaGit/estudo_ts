@@ -1,9 +1,3 @@
-type DoublyLinkedListType<T> = {
-    previous : DoublyLinkedListType<T>| null,
-    value : T,
-    next : DoublyLinkedListType<T> | null
-}
-
 export default class DoublyLinkedList<T>{
     private struct : DoublyLinkedListType<T>
 

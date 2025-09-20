@@ -4,12 +4,10 @@
  * @returns Todos os caracteres no formato binário (apenas legivel normalmente em codificação Windows-1252)
  */
 
-type Binary = `${1|0}${1|0}${1|0}${1|0}${1|0}${1|0}${1|0}${1|0}`
-
 const OCTECT_LENGTH = 8;
 
-export function toBinary(value : string) : Binary[] {
-    const binaryTrack : Binary[] = [];
+export function toBinary(value : string) : BitOctect[] {
+    const binaryTrack : BitOctect[] = [];
     for(let i = 0; i < value.length; i++){
         let currentBinaryConversion : number[] = []
         let currentCharCode = value.charCodeAt(i);
@@ -33,7 +31,7 @@ export function toBinary(value : string) : Binary[] {
             currentBinaryConversion = [...remainingBits, ...currentBinaryConversion];
         }
 
-        binaryTrack[i] = currentBinaryConversion.join('') as Binary;
+        binaryTrack[i] = currentBinaryConversion.join('') as BitOctect;
     }
 
     return binaryTrack;
@@ -44,7 +42,7 @@ export function toBinary(value : string) : Binary[] {
  * @param binaryArray Um array contendo todos os caracteres da sua palavra em binário.
  * @returns Um valor em string que corresponda a coleção de binários informada.
  */
-export function fromBinary(binaryArray : Binary[]) : string {
+export function fromBinary(binaryArray : BitOctect[]) : string {
     let text = '';
     for(let i = 0; i < binaryArray.length; i++){
         const numericBinary = binaryArray[i].split('').map(digit => Number(digit));

@@ -1,5 +1,3 @@
-import type { Matrix } from '../../types/Matrix'
-
 /**
  * @description Itera a matrix pelas colunas dela (esquerda para a direita - cima para baixo).
  * @param {Matrix} matrix Uma matrix bidimensional de qualquer tipo.

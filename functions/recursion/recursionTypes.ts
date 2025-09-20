@@ -1,10 +1,6 @@
 // Descrever didaticamente as diferentes formas de se usar recursão no código.
 
 type IterationCallback = (x : any, i? : number, array? : any[]) => any
-type Tree = {
-    value : number,
-    childs? : Tree[]
-}
 
 /**
  * @description Percorre um array recursivamente, executando um callback para cada elemento.
@@ -59,10 +55,10 @@ export function recursionInCondition(array : any[], callback : IterationCallback
  * @param tree Arvore que contenha os nós valorizados numéricamente.
  * @returns Um array com todos os valores da arvore.
  */
-export function treeIteration(tree : Tree) : number[]{
+export function treeIteration(tree : Tree<number>) : number[]{
     const treeValues : number[] = [];
 
-    function tracking(currentTree : Tree){
+    function tracking(currentTree : Tree<number>){
         treeValues.push(currentTree.value);
         if(currentTree.hasOwnProperty('childs') && currentTree.childs){
             for(let i = 0; i < currentTree.childs.length; i++){
