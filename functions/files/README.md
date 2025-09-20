@@ -1,6 +1,6 @@
 # Detalhes
 
-Neste diretório alguns arquivos podem criar e modificar arquivos.
+Neste diretório alguns scripts podem criar e modificar arquivos.
 
 📥 **Input**: quer mandar algum arquivo para a sua função? Coloque seu arquivo nesta pasta.
 
