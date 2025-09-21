@@ -2,7 +2,7 @@
     "compilerOptions": {
       // outras opções
       "typeRoots": ["./node_modules/@types", "./types"],
-      "lib": ["ES2020", "dom"]
+      "lib": ["ESNext", "dom"]
     },
 
   }
