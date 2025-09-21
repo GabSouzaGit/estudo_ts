@@ -4,7 +4,7 @@
  * @returns Uma versão ordenada da matriz.
  */
 
-function selectionSort(array : number[]){
+export default function selectionSort(array : number[]){
     for(let i = 0; i < array.length; i++){
         for(let j = 0; j < array.length; j++){
             if(array[i] < array[j]){
@@ -15,5 +15,3 @@ function selectionSort(array : number[]){
 
     return array;
 }
-
-export default selectionSort;

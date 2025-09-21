@@ -6,7 +6,7 @@ type Timeouts = {
     [key : string] : any;
 }
 
-class CachedKeys {
+export default class CachedKeys {
     private keys : Keys = {}
     private timeouts : Timeouts = {};
     constructor(){}
@@ -52,5 +52,3 @@ class CachedKeys {
         return Object.keys(this.keys).length;
     }
 }
-
-export default CachedKeys;

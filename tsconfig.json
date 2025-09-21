@@ -1,8 +1,15 @@
 {
     "compilerOptions": {
-      // outras opções
       "typeRoots": ["./node_modules/@types", "./types"],
-      "lib": ["ESNext", "dom"]
+      "lib": ["ESNext", "dom"],
+      "rootDir": ".",
+      "baseUrl": "./project",
+      "paths": {
+        "@/*": ["*"],
+        "@functions/*": ["functions/*"],
+        "@classes/*": ["classes/*"],
+        "@prototypes/*": ["prototypes/*"],
+        "@utils/*": ["utils/*"]
+      },
     },
-
   }

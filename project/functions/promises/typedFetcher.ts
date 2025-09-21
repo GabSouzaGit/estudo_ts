@@ -6,7 +6,7 @@ type FunctionalError = (error : any) => any
  * @param {FunctionalError} callbackError Função que será executada no caso do lançamento de uma exceção.
  * @returns {any} Objeto retornado pela busca.
  */
-async function typedFetcher<ResponseType>(url : string, callbackError : FunctionalError){
+export default async function typedFetcher<ResponseType>(url : string, callbackError : FunctionalError){
     try {
         const raw : Response = await fetch(url);
         const treated : ResponseType = await raw.json();
@@ -15,5 +15,3 @@ async function typedFetcher<ResponseType>(url : string, callbackError : Function
         return callbackError(exception)
     }
 }
-
-export default typedFetcher;

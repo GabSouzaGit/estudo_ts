@@ -2,7 +2,7 @@ type CachedRequests = {
     [key : string] : any
 }
 
-class Async extends Promise<PromiseConstructor>{
+export default class Async extends Promise<PromiseConstructor>{
     private static cachedRequests : CachedRequests = {};
     constructor(callback : (resolve : any, reject : any) => (any)){
         super(callback);
@@ -32,5 +32,3 @@ class Async extends Promise<PromiseConstructor>{
         this.cachedRequests = {};
     }
 }
-
-export default Async;

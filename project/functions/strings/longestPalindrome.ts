@@ -1,4 +1,4 @@
-function longestPalindrome(s: string) {
+export default function longestPalindrome(s: string) {
     const is_pldm = (str : string) => str.split("").reverse().join("") == str;
 
     const search_all = (str : string, regex : RegExp) => {

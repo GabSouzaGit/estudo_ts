@@ -1,4 +1,4 @@
-import paintText from "../utils/paintText";
+import paintText from "@utils/paintText";
 
 type ObjectMapCallback = (value : any, key : string, obj : object) => any
 

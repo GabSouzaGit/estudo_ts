@@ -3,7 +3,7 @@
  * @returns {number} Resultado da soma dos maiores nós traçados durante o percurso pela árvore.
  */
 
-function treeNodesSum(tree : BinaryTree<number>) : number {
+export default function treeNodesSum(tree : BinaryTree<number>) : number {
     let sum = tree.node; 
 
     const recursive = (subTree : BinaryTree<number>) => {
@@ -32,5 +32,3 @@ function treeNodesSum(tree : BinaryTree<number>) : number {
 
     return sum;
 }
-
-export default treeNodesSum;

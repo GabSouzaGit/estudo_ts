@@ -6,7 +6,7 @@ type Fn =  (...params: any[]) => Promise<any>;
  * @param t Tempo limite para execução.
  * @returns Uma nova versão da função, agora dentro do tempo limite.
  */
-function timeLimit(fn: Fn, t: number): Fn {
+export default function timeLimit(fn: Fn, t: number): Fn {
     return async function(...args) {
         return new Promise(async (resolve, reject) => {
             const itn = setTimeout(() => {

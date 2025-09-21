@@ -1,4 +1,4 @@
-class LinkedList<T>{
+export default class LinkedList<T>{
     private linkedList : LinkedListStructure<T>;
     /**
      * @description Realiza a instancia de uma lista encadeada símples.
@@ -135,5 +135,3 @@ class LinkedList<T>{
         return JSON.stringify(this.linkedList, null, 2);
     }
 }
-
-export default LinkedList;

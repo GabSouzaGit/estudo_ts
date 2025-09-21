@@ -3,7 +3,7 @@
  * @param {Matrix} matrix Uma matrix bidimensional de qualquer tipo.
  */
 
-function snailTraversal<A>(matrix : Matrix<A>){
+export default function snailTraversal<A>(matrix : Matrix<A>){
     let [line, add] = [0, 1];
     for(let i = 0; i < matrix[0].length; i++){
         while(true){
@@ -22,5 +22,3 @@ function snailTraversal<A>(matrix : Matrix<A>){
         }
     }
 }
-
-export default snailTraversal;

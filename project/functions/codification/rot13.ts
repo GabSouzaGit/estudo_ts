@@ -3,7 +3,7 @@
  * @param str Texto que será rotacionado.
  * @returns Versão do texto rotacionada 13 vezes.
  */
-function rot13(str : string){
+export default function rot13(str : string){
     const ABC : string[] = 'abcdefghijklmnopqrstuvwxyz'.split("");
     let rot13String = "";
     

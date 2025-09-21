@@ -15,7 +15,7 @@ const coinsValues : number[] = [50, 25, 10, 5, 1];
  * @returns {number[]} Troco do valor pago em moedas. 
  */
 
-function payback(value : number, payment : number){
+export default function payback(value : number, payment : number){
     let rest = value - payment;
     let paybackCoins : number[] = [];
     while(rest > 0){
@@ -43,5 +43,3 @@ function payback(value : number, payment : number){
 
     return filteredResult;
 }
-
-export default payback;

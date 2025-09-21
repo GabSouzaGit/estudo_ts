@@ -19,7 +19,7 @@ const directions : Local[] = [
  * @returns {Maze} Labirinto com o caminho encontrado pelo algoritmo.
  */
 
-function mazeResolver(maze : Maze, start : Local, final : Local) : Maze{
+export default function mazeResolver(maze : Maze, start : Local, final : Local) : Maze{
     function resolver(position : Local, exit : Local){
         const path : Local[] = [];
         const notInTheMaze = position.x < 0 || position.y < 0; 
@@ -61,5 +61,3 @@ function mazeResolver(maze : Maze, start : Local, final : Local) : Maze{
 
     return maze;
 }
-
-export default mazeResolver;

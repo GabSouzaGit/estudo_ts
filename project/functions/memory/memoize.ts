@@ -3,7 +3,7 @@
  * @returns Uma versão memoizada da função informada.
  */
 
-function memoize(fn: Function): Function {
+export default function memoize(fn: Function): Function {
     const cache : {
         [key : string] : any
     } = {}
@@ -19,7 +19,5 @@ function memoize(fn: Function): Function {
         return result;
     }
 }
-
-export default memoize;
 
 
