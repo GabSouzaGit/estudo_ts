@@ -1,9 +1,10 @@
 {
     "compilerOptions": {
       "typeRoots": ["./node_modules/@types", "./types"],
-      "lib": ["ESNext", "dom"],
+      "lib": ["ESNext"],
       "rootDir": ".",
       "baseUrl": "./project",
+      "moduleResolution": "node",
       "paths": {
         "@/*": ["*"],
         "@functions/*": ["functions/*"],
