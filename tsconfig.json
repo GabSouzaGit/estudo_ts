@@ -1,10 +1,12 @@
 {
     "compilerOptions": {
+      "module": "nodenext",
       "typeRoots": ["./node_modules/@types", "./types"],
       "lib": ["ESNext"],
       "rootDir": ".",
       "baseUrl": "./project",
       "moduleResolution": "nodenext",
+
       "paths": {
         "@/*": ["*"],
         "@functions/*": ["functions/*"],
@@ -12,5 +14,7 @@
         "@prototypes/*": ["prototypes/*"],
         "@utils/*": ["utils/*"]
       },
-    },
-  }
+
+      "ignoreDeprecations": "6.0",
+  },
+}
