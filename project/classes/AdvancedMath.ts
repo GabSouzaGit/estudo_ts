@@ -3,7 +3,6 @@ type Percentuals = {
     percentuals : number[]
 }
 
-
 /**
  * 
  * @param {number} n Valor à ser calculado.
